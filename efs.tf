@@ -35,6 +35,7 @@ resource "aws_efs_file_system" "homedirs" {
     Name = "HomeDirs"
     project = "niddel"
   }
+  lifecycle { prevent_destroy = true }
 }
 
 resource "aws_efs_mount_target" "homedir_mountpoint_a" {
